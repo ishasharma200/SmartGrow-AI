@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGrow AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- CHILD DASHBOARD -->
+    <section class="dashboard child-dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">🌱</div>
+                <h3>SmartGrow AI</h3>
+            </div>
+
+            <nav>
+                <button class="nav-item active">🏠 Home</button>
+                <button class="nav-item">📊 My Learning</button>
+                <button class="nav-item">⚙️ Settings</button>
+                <button class="nav-item">❔ Help</button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <span>🌱</span>
+                <p>Grow • Learn • Explore</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h2>Hello, Mia! Ready to grow today?</h2>
+                    <p>Let's make every day a learning adventure.</p>
+                </div>
+                <div class="profile">
+                    <span>Age 6–8</span>
+                    <span class="avatar">👧🏻</span>
+                    <button class="settings-btn">⚙️</button>
+                </div>
+            </header>
+
+            <!-- HERO SECTION -->
+            <section class="hero">
+                <div class="hero-character">👧🏻</div>
+
+                <div class="hero-text">
+                    <h1>Let's make today amazing!</h1>
+                    <p>Learn, play and explore something new.</p>
+                    <button class="primary-btn" id="startLearning">
+                        ▶ Start Learning →
+                    </button>
+                </div>
+
+                <div class="hero-decoration">🌳 🏰 🌻</div>
+            </section>
+
+            <!-- FEATURE CARDS -->
+            <section class="feature-grid">
+
+                <div class="feature-card purple">
+                    <div class="feature-icon">📖</div>
+                    <h3>AI Smart<br>Storyteller</h3>
+                    <button>➜</button>
+                </div>
+
+                <div class="feature-card green">
+                    <div class="feature-icon">🧩</div>
+                    <h3>AI Play &<br>Learn</h3>
+                    <button>➜</button>
+                </div>
+
+                <div class="feature-card pink">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Talking<br>Buddy</h3>
+                    <button>➜</button>
+                </div>
+
+                <div class="feature-card yellow">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Screen-to-<br>Real-World</h3>
+                    <button>➜</button>
+                </div>
+
+                <div class="feature-card blue">
+                    <div class="feature-icon">👩‍👧</div>
+                    <h3>Parent<br>Dashboard</h3>
+                    <button onclick="showParentDashboard()">➜</button>
+                </div>
+
+            </section>
+
+            <!-- DAILY WINS -->
+            <section class="bottom-grid">
+
+                <div class="wins-card">
+                    <h3>🏆 Today's little wins</h3>
+
+                    <div class="wins-list">
+                        <div>📘 <strong>1</strong><small>story</small></div>
+                        <div>🎮 <strong>2</strong><small>games</small></div>
+                        <div>⭐ <strong>3</strong><small>new words</small></div>
+                    </div>
+                </div>
+
+                <div class="adventure-card">
+                    <span>🌳</span>
+                    <div>
+                        <h3>Wonderful learning!</h3>
+                        <p>Now try an offline adventure.</p>
+                    </div>
+                    <span>🌞</span>
+                </div>
+
+            </section>
+
+        </main>
+    </section>
+
+
+    <!-- PARENT DASHBOARD -->
+    <section class="dashboard parent-dashboard" id="parentDashboard">
+
+        <aside class="sidebar parent-sidebar">
+            <div class="logo">
+                <div class="logo-icon">🌱</div>
+                <h3>SmartGrow AI</h3>
+            </div>
+
+            <nav>
+                <button class="nav-item active">📊 Parent Dashboard</button>
+                <button class="nav-item">👨‍👩‍👧 Child Profiles</button>
+                <button class="nav-item">⚙️ Settings</button>
+                <button class="nav-item">📋 Reports</button>
+                <button class="nav-item">❔ Help</button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="parent-header">
+                <div>
+                    <h2>📊 Parent Dashboard</h2>
+                    <p>Track progress, manage screen time and support your child's learning journey.</p>
+                </div>
+
+                <button class="parent-profile">👩🏻 Parent ⌄</button>
+            </header>
+
+            <div class="parent-grid">
+
+                <!-- CHILD PROFILE -->
+                <div class="profile-card">
+                    <h4>Mia's Profile</h4>
+
+                    <div class="child-info">
+                        <div class="child-avatar">👧🏻</div>
+                        <div>
+                            <p>Age: 6 years</p>
+                            <p>Learning Level: Beginner</p>
+                            <button class="small-btn">✏ Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEEKLY ACTIVITY -->
+                <div class="activity-card">
+                    <h4>📈 Weekly Learning Activity</h4>
+                    <div class="chart" id="weeklyChart">
+                        <div class="chart-column">
+                            <div class="bar" style="height:35%"></div>
+                            <small>Mon</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar" style="height:60%"></div>
+                            <small>Tue</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar" style="height:50%"></div>
+                            <small>Wed</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar" style="height:70%"></div>
+                            <small>Thu</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar" style="height:45%"></div>
+                            <small>Fri</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar" style="height:85%"></div>
+                            <small>Sat</small>
+                        </div>
+                        <div class="chart-column">
+                            <div class="bar" style="height:55%"></div>
+                            <small>Sun</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STATISTICS -->
+                <div class="stat-card stat-green">
+                    <span>📚</span>
+                    <h4>Learning Progress</h4>
+                    <h2>85%</h2>
+                </div>
+
+                <div class="stat-card stat-purple">
+                    <span>🕒</span>
+                    <h4>Screen Time</h4>
+                    <h2>42 min/day</h2>
+                </div>
+
+                <div class="stat-card stat-orange">
+                    <span>🏆</span>
+                    <h4>Activities Completed</h4>
+                    <h2>12</h2>
+                </div>
+
+            </div>
+
+            <!-- PARENT CONTROLS -->
+            <div class="parent-controls">
+
+                <div class="control-card">
+                    <h5>🕒 Daily Session Limit</h5>
+
+                    <select id="sessionLimit">
+                        <option value="30">30 minutes</option>
+                        <option value="45" selected>45 minutes</option>
+                        <option value="60">60 minutes</option>
+                        <option value="90">90 minutes</option>
+                    </select>
+
+                    <button class="save-btn" id="saveLimit">Save</button>
+                    <p id="saveMessage"></p>
+                </div>
+
+                <div class="control-card safety-card">
+                    <div>
+                        <h5>🛡 Content Settings</h5>
+                        <p>Age-appropriate content only</p>
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="safeContent" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="control-card encouragement">
+                    🌱 Encourage offline activities for a balanced childhood!
+                </div>
+
+            </div>
+
+        </main>
+    </section>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
