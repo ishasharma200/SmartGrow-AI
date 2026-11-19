@@ -1,272 +1,314 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#eaf3ff">
     <title>SmartGrow AI</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
-
 <div class="app-container">
-
-    <!-- CHILD DASHBOARD -->
-    <section class="dashboard child-dashboard">
-
-        <aside class="sidebar">
+    <section class="dashboard child-dashboard app-view" id="childDashboard" data-view="child" tabindex="-1">
+        <aside class="sidebar" aria-label="Child navigation">
             <div class="logo">
-                <div class="logo-icon">🌱</div>
+                <div class="logo-icon" aria-hidden="true">🌱</div>
                 <h3>SmartGrow AI</h3>
             </div>
 
             <nav>
-                <button class="nav-item active">🏠 Home</button>
-                <button class="nav-item">📊 My Learning</button>
-                <button class="nav-item">⚙️ Settings</button>
-                <button class="nav-item">❔ Help</button>
+                <button class="nav-item active" type="button" data-route="child" aria-current="page">🏠 Home</button>
+                <button class="nav-item" type="button" data-route="learning">📊 My Learning</button>
+                <button class="nav-item" type="button" data-route="settings">⚙️ Settings</button>
+                <button class="nav-item" type="button" data-route="help">❔ Help</button>
             </nav>
 
             <div class="sidebar-bottom">
-                <span>🌱</span>
+                <span aria-hidden="true">🌱</span>
                 <p>Grow • Learn • Explore</p>
             </div>
         </aside>
 
         <main class="main-content">
-
             <header class="top-header">
                 <div>
-                    <h2>Hello, Mia! Ready to grow today?</h2>
+                    <h2 id="welcomeHeading">Hello, Mia! Ready to grow today?</h2>
                     <p>Let's make every day a learning adventure.</p>
                 </div>
                 <div class="profile">
-                    <span>Age 6–8</span>
-                    <span class="avatar">👧🏻</span>
-                    <button class="settings-btn">⚙️</button>
+                    <span id="profileAge">Age 6–8</span>
+                    <span class="avatar" id="profileAvatar" aria-hidden="true">👧🏻</span>
+                    <button class="settings-btn" type="button" data-route="settings" aria-label="Open settings">⚙️</button>
+                    <button class="mobile-menu-button" type="button" data-mobile-menu aria-label="Open navigation">☰</button>
                 </div>
             </header>
 
-            <!-- HERO SECTION -->
-            <section class="hero">
-                <div class="hero-character">👧🏻</div>
-
+            <section class="hero" aria-labelledby="heroTitle">
+                <div class="hero-character" aria-hidden="true" id="heroAvatar">👧🏻</div>
                 <div class="hero-text">
-                    <h1>Let's make today amazing!</h1>
+                    <h1 id="heroTitle">Let's make today amazing!</h1>
                     <p>Learn, play and explore something new.</p>
-                    <button class="primary-btn" id="startLearning">
-                        ▶ Start Learning →
-                    </button>
+                    <button class="primary-btn" id="startLearning" type="button">▶ Start Learning →</button>
                 </div>
-
-                <div class="hero-decoration">🌳 🏰 🌻</div>
+                <div class="hero-decoration" aria-hidden="true">🌳 🏰 🌻</div>
             </section>
 
-            <!-- FEATURE CARDS -->
-            <section class="feature-grid">
-
-                <div class="feature-card purple">
-                    <div class="feature-icon">📖</div>
+            <section class="feature-grid" aria-label="Learning modules">
+                <button class="feature-card purple" type="button" data-feature="storyteller">
+                    <span class="feature-icon" aria-hidden="true">📖</span>
                     <h3>AI Smart<br>Storyteller</h3>
-                    <button>➜</button>
-                </div>
+                    <span class="feature-arrow" aria-hidden="true">➜</span>
+                </button>
 
-                <div class="feature-card green">
-                    <div class="feature-icon">🧩</div>
-                    <h3>AI Play &<br>Learn</h3>
-                    <button>➜</button>
-                </div>
+                <button class="feature-card green" type="button" data-feature="games">
+                    <span class="feature-icon" aria-hidden="true">🧩</span>
+                    <h3>AI Play &amp;<br>Learn</h3>
+                    <span class="feature-arrow" aria-hidden="true">➜</span>
+                </button>
 
-                <div class="feature-card pink">
-                    <div class="feature-icon">🤖</div>
+                <button class="feature-card pink" type="button" data-feature="buddy">
+                    <span class="feature-icon" aria-hidden="true">🤖</span>
                     <h3>AI Talking<br>Buddy</h3>
-                    <button>➜</button>
-                </div>
+                    <span class="feature-arrow" aria-hidden="true">➜</span>
+                </button>
 
-                <div class="feature-card yellow">
-                    <div class="feature-icon">🔍</div>
+                <button class="feature-card yellow" type="button" data-feature="explore">
+                    <span class="feature-icon" aria-hidden="true">🔍</span>
                     <h3>Screen-to-<br>Real-World</h3>
-                    <button>➜</button>
-                </div>
+                    <span class="feature-arrow" aria-hidden="true">➜</span>
+                </button>
 
-                <div class="feature-card blue">
-                    <div class="feature-icon">👩‍👧</div>
+                <button class="feature-card blue" type="button" data-feature="parent">
+                    <span class="feature-icon" aria-hidden="true">👩‍👧</span>
                     <h3>Parent<br>Dashboard</h3>
-                    <button onclick="showParentDashboard()">➜</button>
-                </div>
-
+                    <span class="feature-arrow" aria-hidden="true">➜</span>
+                </button>
             </section>
 
-            <!-- DAILY WINS -->
-            <section class="bottom-grid">
-
-                <div class="wins-card">
+            <section class="bottom-grid" aria-label="Today's learning summary">
+                <article class="wins-card">
                     <h3>🏆 Today's little wins</h3>
-
-                    <div class="wins-list">
-                        <div>📘 <strong>1</strong><small>story</small></div>
-                        <div>🎮 <strong>2</strong><small>games</small></div>
-                        <div>⭐ <strong>3</strong><small>new words</small></div>
+                    <div class="wins-list" id="dailyWins">
+                        <div>📘 <strong id="storyWinCount">0</strong><small>stories</small></div>
+                        <div>🎮 <strong id="gameWinCount">0</strong><small>games</small></div>
+                        <div>⭐ <strong id="buddyWinCount">0</strong><small>buddy chats</small></div>
                     </div>
-                </div>
+                </article>
 
-                <div class="adventure-card">
-                    <span>🌳</span>
+                <article class="adventure-card">
+                    <span aria-hidden="true">🌳</span>
                     <div>
                         <h3>Wonderful learning!</h3>
                         <p>Now try an offline adventure.</p>
                     </div>
-                    <span>🌞</span>
-                </div>
-
+                    <span aria-hidden="true">🌞</span>
+                </article>
             </section>
 
+            <section class="child-progress-section" aria-label="Learning progress and achievements">
+                <article class="child-progress-card">
+                    <div class="child-progress-heading">
+                        <div>
+                            <h3>My learning journey</h3>
+                            <p id="childProgressSummary">Complete activities to grow your progress.</p>
+                        </div>
+                        <strong id="childProgressPercent">0%</strong>
+                    </div>
+                    <div
+                        class="child-progress-track"
+                        id="childProgressTrack"
+                        role="progressbar"
+                        aria-label="Learning progress"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                    >
+                        <span id="childProgressFill"></span>
+                    </div>
+                </article>
+                <article class="child-achievements-card">
+                    <h3>My achievements</h3>
+                    <div class="child-achievement-list" id="childAchievementList" aria-live="polite">
+                        <p class="child-achievement-empty">Your badges will appear here as you learn and explore.</p>
+                    </div>
+                </article>
+            </section>
         </main>
     </section>
 
-
-    <!-- PARENT DASHBOARD -->
-    <section class="dashboard parent-dashboard" id="parentDashboard">
-
-        <aside class="sidebar parent-sidebar">
+    <section class="dashboard parent-dashboard app-view" id="parentDashboard" data-view="parent" tabindex="-1" hidden>
+        <aside class="sidebar parent-sidebar" aria-label="Parent navigation">
             <div class="logo">
-                <div class="logo-icon">🌱</div>
+                <div class="logo-icon" aria-hidden="true">🌱</div>
                 <h3>SmartGrow AI</h3>
             </div>
 
             <nav>
-                <button class="nav-item active">📊 Parent Dashboard</button>
-                <button class="nav-item">👨‍👩‍👧 Child Profiles</button>
-                <button class="nav-item">⚙️ Settings</button>
-                <button class="nav-item">📋 Reports</button>
-                <button class="nav-item">❔ Help</button>
+                <button class="nav-item active" type="button" data-route="parent" aria-current="page">📊 Parent Dashboard</button>
+                <button class="nav-item" type="button" data-route="profiles">👨‍👩‍👧 Child Profiles</button>
+                <button class="nav-item" type="button" data-route="settings">⚙️ Settings</button>
+                <button class="nav-item" type="button" data-route="reports">📋 Reports</button>
+                <button class="nav-item" type="button" data-route="help">❔ Help</button>
             </nav>
         </aside>
 
         <main class="main-content">
-
             <header class="parent-header">
                 <div>
                     <h2>📊 Parent Dashboard</h2>
                     <p>Track progress, manage screen time and support your child's learning journey.</p>
                 </div>
-
-                <button class="parent-profile">👩🏻 Parent ⌄</button>
+                <div class="parent-header-actions">
+                    <button class="nav-back" type="button" data-route="child">← Child Dashboard</button>
+                    <button class="parent-profile" type="button" data-route="profiles">👩🏻 Parent ⌄</button>
+                    <button class="mobile-menu-button" type="button" data-mobile-menu aria-label="Open navigation">☰</button>
+                </div>
             </header>
 
             <div class="parent-grid">
-
-                <!-- CHILD PROFILE -->
-                <div class="profile-card">
-                    <h4>Mia's Profile</h4>
-
+                <article class="profile-card">
+                    <h4 id="childProfileHeading">Mia's Profile</h4>
                     <div class="child-info">
-                        <div class="child-avatar">👧🏻</div>
+                        <div class="child-avatar" id="childProfileAvatar" aria-hidden="true">👧🏻</div>
                         <div>
-                            <p>Age: 6 years</p>
-                            <p>Learning Level: Beginner</p>
-                            <button class="small-btn">✏ Edit Profile</button>
+                            <p id="childAgeText">Age: 6 years</p>
+                            <p id="childLevelText">Learning Level: Beginner</p>
+                            <button class="small-btn" id="editChildProfile" type="button" data-route="profiles">✏ Edit Profile</button>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <!-- WEEKLY ACTIVITY -->
-                <div class="activity-card">
+                <article class="activity-card">
                     <h4>📈 Weekly Learning Activity</h4>
-                    <div class="chart" id="weeklyChart">
-                        <div class="chart-column">
-                            <div class="bar" style="height:35%"></div>
-                            <small>Mon</small>
-                        </div>
-                        <div class="chart-column">
-                            <div class="bar" style="height:60%"></div>
-                            <small>Tue</small>
-                        </div>
-                        <div class="chart-column">
-                            <div class="bar" style="height:50%"></div>
-                            <small>Wed</small>
-                        </div>
-                        <div class="chart-column">
-                            <div class="bar" style="height:70%"></div>
-                            <small>Thu</small>
-                        </div>
-                        <div class="chart-column">
-                            <div class="bar" style="height:45%"></div>
-                            <small>Fri</small>
-                        </div>
-                        <div class="chart-column">
-                            <div class="bar" style="height:85%"></div>
-                            <small>Sat</small>
-                        </div>
-                        <div class="chart-column">
-                            <div class="bar" style="height:55%"></div>
-                            <small>Sun</small>
-                        </div>
-                    </div>
-                </div>
+                    <div class="chart" id="weeklyChart" aria-label="Weekly learning activity chart"></div>
+                </article>
 
-                <!-- STATISTICS -->
-                <div class="stat-card stat-green">
-                    <span>📚</span>
+                <article class="stat-card stat-green">
+                    <span aria-hidden="true">📚</span>
                     <h4>Learning Progress</h4>
-                    <h2>85%</h2>
-                </div>
+                    <h2 id="learningProgressStat">0%</h2>
+                </article>
 
-                <div class="stat-card stat-purple">
-                    <span>🕒</span>
+                <article class="stat-card stat-purple">
+                    <span aria-hidden="true">🕒</span>
                     <h4>Screen Time</h4>
-                    <h2>42 min/day</h2>
-                </div>
+                    <h2 id="screenTimeStat">0 min/day</h2>
+                </article>
 
-                <div class="stat-card stat-orange">
-                    <span>🏆</span>
+                <article class="stat-card stat-orange">
+                    <span aria-hidden="true">🏆</span>
                     <h4>Activities Completed</h4>
-                    <h2>12</h2>
-                </div>
-
+                    <h2 id="activitiesStat">0</h2>
+                </article>
             </div>
 
-            <!-- PARENT CONTROLS -->
             <div class="parent-controls">
-
-                <div class="control-card">
+                <section class="control-card">
                     <h5>🕒 Daily Session Limit</h5>
-
+                    <label class="visually-hidden" for="sessionLimit">Daily session limit</label>
                     <select id="sessionLimit">
                         <option value="30">30 minutes</option>
-                        <option value="45" selected>45 minutes</option>
+                        <option value="45">45 minutes</option>
                         <option value="60">60 minutes</option>
                         <option value="90">90 minutes</option>
                     </select>
+                    <button class="save-btn" id="saveLimit" type="button">Save</button>
+                    <p id="saveMessage" role="status" aria-live="polite"></p>
+                </section>
 
-                    <button class="save-btn" id="saveLimit">Save</button>
-                    <p id="saveMessage"></p>
-                </div>
-
-                <div class="control-card safety-card">
+                <section class="control-card safety-card">
                     <div>
                         <h5>🛡 Content Settings</h5>
                         <p>Age-appropriate content only</p>
                     </div>
-
                     <label class="switch">
-                        <input type="checkbox" id="safeContent" checked>
+                        <input type="checkbox" id="safeContent" aria-label="Enable age-appropriate content">
                         <span class="slider"></span>
                     </label>
-                </div>
+                </section>
 
-                <div class="control-card encouragement">
+                <section class="control-card encouragement">
                     🌱 Encourage offline activities for a balanced childhood!
-                </div>
-
+                </section>
             </div>
-
         </main>
     </section>
 
+    <section class="dashboard app-view" id="utilityView" data-view="utility" tabindex="-1" hidden>
+        <main class="main-content utility-main">
+            <header class="parent-header">
+                <div>
+                    <h2 id="utilityTitle"></h2>
+                    <p id="utilityDescription"></p>
+                </div>
+                <button class="nav-back" type="button" data-route="child">← Back</button>
+            </header>
+            <div id="utilityContent"></div>
+        </main>
+    </section>
 </div>
 
+<div class="modal-overlay" id="storyModal" hidden>
+    <section class="story-modal" role="dialog" aria-modal="true" aria-labelledby="storyModalTitle" aria-describedby="storyModalDescription">
+        <button class="close-modal" id="closeStory" type="button" aria-label="Close storyteller">✕</button>
+        <div class="story-heading">
+            <span aria-hidden="true">📖</span>
+            <h2 id="storyModalTitle">AI Smart Storyteller</h2>
+            <p id="storyModalDescription">Let's create a magical story together!</p>
+        </div>
+        <div class="story-form" id="storyForm">
+            <label for="storyTheme">Choose your story theme</label>
+            <select id="storyTheme">
+                <option value="adventure">Magical Adventure</option>
+                <option value="animals">Talking Animals</option>
+                <option value="friendship">Friendship</option>
+                <option value="space">Space Adventure</option>
+                <option value="nature">Nature and Environment</option>
+            </select>
+            <label for="heroName">What is your favourite character's name?</label>
+            <input type="text" id="heroName" placeholder="Enter a character name..." maxlength="30" autocomplete="off">
+            <p class="story-error" id="storyError" role="alert" hidden></p>
+            <button class="generate-btn" id="generateStory" type="button">✨ Create My Story</button>
+        </div>
+        <div class="story-result" id="storyResult" hidden>
+            <h2 id="storyTitle"></h2>
+            <div class="story-illustration" aria-hidden="true">📚 🌈 🦄</div>
+            <p id="storyContent"></p>
+            <div class="story-actions">
+                <button class="generate-btn" id="listenStory" type="button">🔊 Listen to My Story</button>
+                <button class="generate-btn" id="newStory" type="button">🔄 Create Another Story</button>
+            </div>
+            <p class="speech-status" id="speechStatus" role="status" aria-live="polite"></p>
+        </div>
+    </section>
+</div>
+
+<div class="modal-overlay" id="appModal" hidden>
+    <section class="story-modal app-modal" role="dialog" aria-modal="true" aria-labelledby="appModalTitle" aria-describedby="appModalDescription">
+        <button class="close-modal" id="closeAppModal" type="button" aria-label="Close dialog">✕</button>
+        <div class="story-heading">
+            <h2 id="appModalTitle">SmartGrow</h2>
+            <p id="appModalDescription"></p>
+        </div>
+        <div id="appModalBody"></div>
+        <div class="story-actions" id="appModalActions"></div>
+    </section>
+</div>
+
+<div class="toast-region" id="toastRegion" aria-live="polite" aria-label="Notifications"></div>
+
+<script src="js/storage.js"></script>
+<script src="js/games.js"></script>
+<script src="js/talking-buddy.js"></script>
+<script src="js/real-world.js"></script>
+<script src="js/storyteller.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/parent-dashboard.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/reports.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

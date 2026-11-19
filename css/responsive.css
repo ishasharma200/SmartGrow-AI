@@ -1,0 +1,458 @@
+@media (max-width: 1220px) {
+    .dashboard {
+        min-height: calc(100vh - 36px);
+    }
+
+    .sidebar {
+        width: 210px;
+        flex-basis: 210px;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+    .parent-controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .parent-controls > .encouragement {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 900px) {
+    .app-container {
+        width: min(100% - 24px, 760px);
+        padding-top: 12px;
+    }
+
+    .dashboard {
+        min-height: calc(100vh - 24px);
+    }
+
+    .sidebar {
+        width: 190px;
+        flex-basis: 190px;
+        padding: 20px 12px;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
+
+    .hero {
+        min-height: 200px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature-card {
+        min-height: 140px;
+    }
+
+    .parent-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .parent-grid > .activity-card {
+        grid-column: span 2;
+    }
+
+    .parent-dashboard-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 760px) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .app-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .dashboard {
+        min-height: 100vh;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 18px 16px 28px;
+    }
+
+    .top-header,
+    .parent-header {
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .top-header h2,
+    .parent-header h2 {
+        font-size: 21px;
+    }
+
+    .top-header p,
+    .parent-header p {
+        font-size: 13px;
+    }
+
+    .profile {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 7px;
+    }
+
+    .profile > span:first-child {
+        display: none;
+    }
+
+    .avatar {
+        width: 39px;
+        height: 39px;
+        font-size: 24px;
+    }
+
+    .settings-btn {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: inline-flex;
+    }
+
+    .parent-header-actions {
+        justify-content: flex-end;
+        gap: 6px;
+    }
+
+    .parent-profile {
+        display: none;
+    }
+
+    .hero {
+        min-height: 190px;
+        gap: 14px;
+        border-radius: 20px;
+        padding: 20px 17px;
+    }
+
+    .hero-character {
+        width: 76px;
+        height: 76px;
+        border-width: 4px;
+        font-size: 49px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(23px, 7vw, 30px);
+    }
+
+    .hero-text p {
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .primary-btn {
+        min-height: 42px;
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .feature-card {
+        min-height: 132px;
+        border-radius: 17px;
+        padding: 15px;
+    }
+
+    .feature-icon {
+        font-size: 32px;
+    }
+
+    .feature-card h3 {
+        font-size: 13px;
+    }
+
+    .feature-grid > .feature-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 14px;
+    }
+
+    .child-progress-section {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .wins-card,
+    .adventure-card {
+        padding: 15px;
+    }
+
+    .parent-grid,
+    .parent-dashboard-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px;
+    }
+
+    .parent-grid > .activity-card {
+        grid-column: 1 / -1;
+    }
+
+    .profile-card {
+        grid-column: 1 / -1;
+    }
+
+    .profile-card,
+    .activity-card,
+    .stat-card {
+        min-height: 128px;
+        padding: 13px;
+    }
+
+    .activity-card {
+        min-height: 155px;
+    }
+
+    .parent-stat-detail {
+        min-height: 104px;
+    }
+
+    .parent-stat-detail h5 {
+        font-size: 12px;
+    }
+
+    .parent-stat-detail strong {
+        font-size: 19px;
+    }
+
+    .chart {
+        height: 82px;
+    }
+
+    .parent-controls {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .parent-controls > .encouragement {
+        grid-column: auto;
+    }
+
+    .control-card {
+        padding: 14px;
+    }
+
+    .utility-main {
+        min-height: 100vh;
+    }
+
+    .modal-overlay {
+        align-items: flex-end;
+        padding: 8px;
+    }
+
+    .story-modal {
+        width: 100%;
+        max-height: 94vh;
+        border-radius: 22px 22px 16px 16px;
+        padding: 22px 17px;
+    }
+
+    .story-heading {
+        margin-bottom: 18px;
+    }
+
+    .story-heading h2 {
+        font-size: 21px;
+    }
+
+    .story-actions {
+        flex-direction: column;
+    }
+
+    .story-actions .generate-btn {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .storyteller-extra-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .storyteller-extra-actions .generate-btn:last-child {
+        grid-column: auto;
+    }
+
+    .module-controls,
+    .quiz-progress,
+    .daily-challenge {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .module-card {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .module-card .generate-btn {
+        width: 100%;
+    }
+
+    .answer-grid,
+    .report-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offline-card {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .offline-card .generate-btn {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: none;
+    }
+
+    .chat-form {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .chat-form .generate-btn {
+        width: 100%;
+    }
+
+    .report-period-controls {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .report-period-controls .generate-btn {
+        width: 100%;
+    }
+
+    .module-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .module-actions .generate-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .main-content {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .parent-grid,
+    .parent-dashboard-details {
+        grid-template-columns: 1fr !important;
+    }
+
+    .parent-grid > .activity-card,
+    .profile-card {
+        grid-column: auto;
+    }
+
+    .top-header {
+        flex-wrap: wrap;
+    }
+
+    .top-header > div:first-child {
+        flex: 1 1 100%;
+    }
+
+    .profile {
+        margin-left: auto;
+    }
+
+    .feature-card {
+        min-height: 118px;
+        padding: 12px;
+    }
+
+    .wins-list div {
+        min-width: 0;
+        flex: 1;
+        padding: 8px 5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media print {
+    body {
+        background: #fff;
+    }
+
+    .sidebar,
+    .mobile-menu-button,
+    .parent-header-actions,
+    .parent-controls,
+    .modal-overlay,
+    .toast-region,
+    .report-period-controls {
+        display: none !important;
+    }
+
+    .app-container,
+    .dashboard {
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    .control-card,
+    .stat-card,
+    .module-card {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+}
